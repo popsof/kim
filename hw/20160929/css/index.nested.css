@@ -1,0 +1,24 @@
+.nav-no-margin {
+  margin: 0; }
+
+.wrap-main .main-content {
+  background-image: url("../img/main.jpg");
+  height: 678px;
+  background-color: black;
+  background-repeat: no-repeat;
+  background-position: 50% top;
+  position: relative; }
+  .wrap-main .main-content .main-msg {
+    text-align: right;
+    color: white;
+    position: absolute;
+    top: 26%;
+    left: 50%;
+    margin-left: -450px; }
+    .wrap-main .main-content .main-msg .msg-top {
+      font-size: 20px;
+      margin-bottom: 0; }
+    .wrap-main .main-content .main-msg .msg-bottom {
+      font-size: 40px; }
+
+/*# sourceMappingURL=index.nested.css.map */
