@@ -21,35 +21,185 @@
           <img src="images/logo.png" alt="">
         </a>
 
-        <button class="navbar-toggle collapsed">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
+        <button class="navbar-toggle collapsed"
+        data-toggle="collapse" data-target="#top-navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+
+    <div class="collapse navbar-collapse" id="top-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">방 검색</a></li>
+        <li><a href="#">관심목록</a></li>
+        <li><a href="#">방 등록</a></li>
+        <li><a></a></li>
+        <li><a href="#">공인중개사 가입</a></li>
+        <li><a href="#">회원가입 및 로그인</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- index page의 내용부분을 담는 block -->
+  <div class="index-content">
+    <div class="jumbotron index-image-container">
+
+      <div class="caption-container">
+        <p class="caption-top">850만 명이 선택한 대표 부동산 앱</p>
+        <p class="caption-bottom">우리, 살고 싶은 데서 살자</p>
       </div>
-      <div class="collapse navbar-collapse">
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="#">방 검색</a></li>
-          <li><a href="#">관심목록</a></li>
-          <li><a href="#">방 등록</a></li>
-          <li><a></a></li>
-          <li><a href="#">공인중개사 가입</a></li>
-          <li><a href="#">회원가입 및 로그인</a></li>
-        </ul>
-      </div>
-    </nav>
 
-    <!-- index page의 내용부분을 담는 block -->
-    <div class="index-content">
-      <div class="jumbotron index-image-container">
-
-        <div class="caption-container">
-          <p class="caption-top">850만 명이 선택한 대표 부동산 앱</p>
-          <p class="caption-bottom">우리, 살고 싶은 데서 살자</p>
-        </div>
-
+      <div class="search-base">
+        <form class="form-inline search-form">
+          <div class="form-group">
+            <input type="text" class="form-control input-lg"
+            placeholder="관심지역 또는 매물번호를 검색해보세요">
+          </div>
+          <button class="btn btn-primary btn-lg" type="submit">방 검색</button>
+        </form>
       </div>
     </div>
 
-  </body>
+    <div class="index-content-title-container">
+
+      <h2><strong>테마 검색</strong></h2>
+      <p>다방의 다양한 검색조건으로 방을 찾아보세요</p>
+    </div>
+
+    <div class="theme-list container">
+      <div class="col-sm-4 col-xs-6">
+        <div class="theme-item">
+          <img class="item-img" src="images/theme/pet.jpg" alt="pet">
+          <div class="item-mask"></div>
+          <div class="item-caption">
+            <h3>반려동물</h3>
+            <p>반려동물과 함께 살 수 있는 방 찾아보기</p>
+          </div>
+        </div>
+      </div>
+
+<!--
+        <a href="#" class="thumbnail">
+          <img src="images/theme/pet.jpg" alt="pet"></a>
+          <div class="caption text-center">
+          </div>
+      </div> -->
+
+      <div class="col-sm-4 col-xs-6">
+        <a href="#" class="thumbnail">
+          <img src="images/theme/low-price.jpg" alt="pet"></a>
+          <div class="caption text-center">
+          <h3>저보증금</h3>
+          <p>보증금 300만원 이하인 방 찾아보기</p>
+          </div>
+      </div>
+
+
+      <div class="col-sm-4 col-xs-6">
+        <a href="#" class="thumbnail">
+          <img src="images/theme/360.jpg" alt="pet"></a>
+          <div class="caption text-center">
+          <h3>360도 매물</h3>
+          <p>3D 이미지로 더 자세히 볼 수 있는 방 찾아보기</p>
+          </div>
+      </div>
+
+
+      <div class="col-sm-4 col-xs-6">
+        <a href="#" class="thumbnail">
+          <img src="images/theme/parking.jpg" alt="pet"></a>
+          <div class="caption text-center">
+          <h3>주차가능</h3>
+          <p>주차공간이 확보된 방 찾아보기</p>
+          </div>
+      </div>
+
+      <div class="col-sm-4 col-xs-6">
+        <a href="#" class="thumbnail">
+          <img src="images/theme/direct.jpg" alt="pet"></a>
+          <div class="caption text-center">
+          <h3>직거래매물</h3>
+          <p>중개수수료 없는 직거래 매물 찾아보기</p>
+          </div>
+      </div>
+
+      <div class="col-sm-4 col-xs-6">
+        <a href="#" class="thumbnail">
+          <img src="images/theme/studio.jpg" alt="pet"></a>
+          <div class="caption text-center">
+          <h3>오피스텔</h3>
+          <p>깨끗하고 편리한 주거용 오피스텔 찾아보기</p>
+          </div>
+      </div>
+
+
+
+
+
+
+      <!-- <div class="col-xs-4"></div>
+      <div class="col-xs-4"></div>
+      <div class="col-xs-4"></div>
+      <div class="col-xs-4"></div>
+      <div class="col-xs-4"></div> -->
+    </div>
+    <!-- theme-list -->
+
+    <div class="sitemap-container">
+      <div class="sitemap-ul-con col-md-2 col-xs-6 col-md-offset-1">
+        <ul>
+          <li><strong>형태별 검색</strong></li>
+          <li>원룸</li>
+          <li>투룸</li>
+          <li>쓰리룸</li>
+          <li>오피스텔</li>
+          <li>아파트</li>
+        </ul>
+      </div>
+      <div class="sitemap-ul-con col-md-2 col-xs-6">
+        <ul>
+          <li><strong>테마별 검색</strong></li>
+          <li>저보증금</li>
+          <li>오피스텔</li>
+          <li>직거래 매물</li>
+          <li>주차 가능</li>
+          <li>반려동물 가능</li>
+        </ul>
+      </div>
+      <div class="sitemap-ul-con col-md-2 col-xs-6">
+      <ul>
+        <li><strong>테마별 검색</strong></li>
+        <li>저보증금</li>
+        <li>오피스텔</li>
+        <li>직거래 매물</li>
+        <li>주차 가능</li>
+        <li>반려동물 가능</li>
+      </ul>
+    </div>
+      <div class="sitemap-ul-con col-md-2 col-xs-6">
+      <ul>
+        <li><strong>테마별 검색</strong></li>
+        <li>저보증금</li>
+        <li>오피스텔</li>
+        <li>직거래 매물</li>
+        <li>주차 가능</li>
+        <li>반려동물 가능</li>
+      </ul>
+    </div>
+      <div class="sitemap-ul-con col-md-2 col-xs-6">
+      <ul>
+        <li><strong>테마별 검색</strong></li>
+        <li>저보증금</li>
+        <li>오피스텔</li>
+        <li>직거래 매물</li>
+        <li>주차 가능</li>
+        <li>반려동물 가능</li>
+      </ul>
+
+    </div>
+
+
+  </div>
+</body>
 </html>
