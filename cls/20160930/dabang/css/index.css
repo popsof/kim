@@ -1,0 +1,32 @@
+.index-content .index-image-container {
+  position: relative;
+  background-image: url(../images/index-bg.jpg);
+  height: 678px;
+  background-position: 50% top;
+  background-repeat: no-repeat;
+  background-color: black;
+}
+
+.index-content .index-image-container .caption-container {
+  position: absolute;
+  left: 50%;
+  top: 28%;
+  color: white;
+  text-align: right;
+  margin-left: -420px;
+}
+
+.index-content .index-image-container .caption-container .caption-top {
+  font-size: 22px;
+  margin-bottom: 0px;
+}
+
+.index-content .index-image-container .caption-container .caption-bottom {
+  font-size: 36px;
+}
+
+nav.navbar-no-margin {
+  margin: 0;
+}
+
+/*# sourceMappingURL=index.css.map */
