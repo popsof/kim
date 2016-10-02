@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>This is My Page's Title</title>
+  <style type="text/css">
+  #main {
+    display: table;
+    width: 100%
+  }
+  #left {
+    display: table-cell;
+    background-color: cyan;
+    margin-left : 10px
+    margin-right : 10px
+  }
+  #leftcap {
+    margin: 5px 10px;
+  }
+  #right {
+    width: 100%;
+    background-color:#00FF00;
+    display: table-cell;
+  }
+  #rightinner {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    border-top: 1px solid black;
+    transform: translateY( 50% )
+  }
+
+  </style>
+</head>
+
+<body>
+  <div id="main">
+    <div id="left">
+      <h4 id="leftcap">left</h4>
+    </div>
+    <div id="right">
+      <span id="rightinner"></span>
+
+    </div>
+  </div>
+</body>
+
+</html>
