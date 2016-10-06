@@ -1,0 +1,9 @@
+{
+	"version": 3,
+	"file": "post_list.compact.css",
+	"sources": [
+		"../sass/post_list.sass"
+	],
+	"mappings": "AAAA,AAAA,OAAO,CAAC,EACN,MAAM,EAAE,mBAAoB,EAC5B,MAAM,EAAE,cAAe,GAOY;;AATrC,AAOE,OAPK,CAOL,gBAAgB,CAAC,EACf,UAAU,EAAE,KAAM,EAClB,MAAM,EAAE,mBAAoB,GAAG",
+	"names": []
+}

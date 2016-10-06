@@ -1,0 +1,25 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="{% static 'css/post_list.css' %}">
+  <title>{{title}}</title>
+</head>
+<body>
+  <h1>{{ title }}</h1>
+
+  {% for post in posts %}
+  <article>
+
+    <h4 class="post-title">{{ post.title }}</h4>
+    <p class="post-description">{{ post.description }}</p>
+    <p class="post-created">{{ post.created }}</p>
+    <p class="post-like-count">{{ post.like_count }}</p>
+  </article>
+  {% endfor %}
+
+</body>
+</html>
