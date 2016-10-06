@@ -1,0 +1,89 @@
+a.navbar-height {
+  height: auto; }
+
+.main-content .main-top-link {
+  border: 2px solid black;
+  color: black; }
+  .main-content .main-top-link:hover {
+    text-decoration: none;
+    background-color: black;
+    color: white;
+    border: 2px solid black; }
+  .main-content .main-top-link p {
+    text-align: center;
+    margin: 10px 0 10px 0; }
+
+.main-content .main-top-left {
+  color: white;
+  background-color: #222222; }
+
+.main-divider {
+  display: table;
+  margin: 30px 0; }
+  .main-divider .divider-left {
+    display: table-cell;
+    margin-left: 10px;
+    margin-right: 10px; }
+    .main-divider .divider-left .sep-caption {
+      margin: 5px 10px;
+      white-space: pre; }
+  .main-divider .divider-right {
+    width: 100%;
+    display: table-cell; }
+    .main-divider .divider-right .horizontal-bar {
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      border-top: 1px solid black;
+      transform: translateY(50%); }
+
+.soon-open-main {
+  margin: 0 20px; }
+  .soon-open-main .no-border {
+    border: 0; }
+
+.contact-info {
+  margin: 0 10px;
+  font-size: 13px; }
+  .contact-info .red-caption {
+    color: red; }
+
+.news-letter {
+  margin-left: 25px; }
+  .news-letter .news-letter-guide {
+    font-size: 16px;
+    margin-bottom: 30px; }
+  .news-letter .email-subscribe {
+    margin-left: 20px;
+    margin-bottom: 50px; }
+    .news-letter .email-subscribe .input-email {
+      margin-bottom: 10px;
+      width: 350px; }
+    .news-letter .email-subscribe .btn-subscribe {
+      width: 190px;
+      color: white;
+      background-color: #888; }
+      .news-letter .email-subscribe .btn-subscribe:hover {
+        background-color: #323232; }
+
+.main-footer {
+  padding: 20px 20px 20px 20px;
+  line-height: 25px;
+  font-size: 14px;
+  color: #888;
+  background-color: #3d4045; }
+  .main-footer .main-footer-card {
+    margin: 20px 20px; }
+    .main-footer .main-footer-card .header {
+      color: white; }
+    .main-footer .main-footer-card .link {
+      color: #f97352; }
+
+.last-footer {
+  color: #888;
+  background-color: #424242; }
+  .last-footer .caption {
+    font-size: 12px;
+    margin: 22px 22px; }
+
+/*# sourceMappingURL=index.nested.css.map */
