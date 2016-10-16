@@ -1,0 +1,11 @@
+{% extends 'common/base.html' %}
+
+{% block content %}
+<h3>{{ sub_title }}</h3>
+<form method="POST">
+{% csrf_token %}
+{{ form.as_p }}
+<button type="submit" class="save btn btn-default">Save</button>
+</form>
+
+{% endblock %}

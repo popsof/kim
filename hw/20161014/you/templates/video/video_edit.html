@@ -1,0 +1,36 @@
+{% extends 'common/base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+<div>
+<h3>{{ sub_title }}</h3>
+
+<form method="POST" class="form">
+{% csrf_token %}
+{% for field in form %}
+<div class="form-group {% if field.errors %}has-error{% endif %}">
+  {{ field.label_tag }}
+  {{ field }}
+  <div>{{ field.errors }}</div>
+</div>
+{% endfor %}
+<button type="submit" class="save btn btn-default">Save</button>
+<button type="button" class="btn btn-default" onclick="applyUrl()">
+  Preview</button>
+</form>
+</div>
+
+<p></p>
+<div class="panel panel-default">
+<div id="id_preview_panel" class="panel-body embed-responsive embed-responsive-16by9">
+  {% if key %}
+  <iframe class="embed-responsive-item" width="560" height="315"
+          src="https://www.youtube.com/embed/{{ key }}"
+          allowfullscreen>
+  </iframe>
+  {% endif %}
+</div>
+</div>
+<script src="{% static 'js/video_edit.js' %}"></script>
+
+{% endblock %}

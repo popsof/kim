@@ -1,0 +1,49 @@
+{% extends 'common/base.html' %}
+
+{% block content %}
+<ul class="nav nav-tabs">
+  <li role="presentation"
+    {% if cur_id == 0 %}class="active"{% endif %}>
+    <a href="{% url 'video:main_list' ''%}">전체</a>
+  </li>
+  {% for cate in cate_list %}
+  <li role="presentation"
+    {% if cur_id == cate.id %}class="active"{% endif %}>
+    <a href="{% url 'video:main_list' cate.id %}">{{ cate.name }}</a>
+  </li>
+  {% endfor %}
+  <li role="presentation">
+    <a href="{% url 'video:cate_new' %}">
+      <span class="glyphicon glyphicon-plus"></span>
+    </a>
+  </li>
+  <li role="presentation">
+    <a href="{% url 'video:video_new' cur_id %}">
+      영상추가
+    </a>
+  </li>
+
+
+</ul>
+{% for video in video_list %}
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <span class="panel-title">{{ video.title }}</span>
+    <a href="{% url 'video:video_edit' video.id %}">
+      <span class="glyphicon glyphicon-pencil"></span></a>
+    <div class="panel-body margin-top10 embed-responsive embed-responsive-16by9">
+      <!--
+      <iframe width="560" height="315"
+              src="https://www.youtube.com/embed/{{ video.key }}"
+              frameborder="0" allowfullscreen>
+      </iframe>
+      -->
+      <iframe class="embed-responsive-item" width="560" height="315"
+              src="https://www.youtube.com/embed/{{ video.key }}"
+              allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+</div>
+{% endfor %}
+{% endblock %}

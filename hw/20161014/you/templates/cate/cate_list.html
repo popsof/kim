@@ -1,0 +1,21 @@
+{% extends 'common/base.html' %}
+
+{% block content %}
+<h3>category list</h3>
+{% for cate in cate_list %}
+
+<div>
+  <p>
+    <a href="{% url 'video:video_list' cate.id %}">
+      {{ cate.name }}
+    </a>
+    <a href="{% url 'video:cate_edit' cate.id %}">
+      <span class="glyphicon glyphicon-pencil">Edit
+    </a>
+  </p>
+  <p>created: {{ cate.created_date }}</p>
+</div>
+
+{% endfor %}
+
+{% endblock %}
