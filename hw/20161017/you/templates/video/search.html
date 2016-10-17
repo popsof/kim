@@ -1,0 +1,50 @@
+{% extends 'common/base.html' %}
+{% block content %}
+<div class="container">
+
+  <div class="row">
+    <form action="">
+      <div class="col-sm-offset-2 col-sm-8">
+        <div class="input-group">
+          <input type="text" class="form-control"
+            name="keyword" placeholder="{{ keyword }}">
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="submit">검색</button>
+          </span>
+        </div>
+      </div>
+    </form>
+  </div>
+  <p></p>
+
+  <p></p>
+  <ul>
+    {% for form in form_list %}
+    <li>
+      <form action="{% url 'video:video_add' %}" method="POST">
+        {% csrf_token %}
+        {{ form }}
+        <input type="hidden" name="next" value="{{ request.get_full_path }}">
+        <img src="{{ form.thumbnail.value }}">
+        <p>{{ form.title.value }}</p>
+        <p>{{ form.desc.value }}</p>
+        <p>{{ form.published_date.value }}</p>
+        <button type="submit" class="btn btn-default">추가</button>
+      </form>
+    </li>
+    {% endfor %}
+  </ul>
+
+  <nav>
+    <ul class="pager">
+      {% if response.prevPageToken %}
+      <li><a href="{% url 'video:search' %}?keyword={{ keyword }}&page_token={{ response.prevPageToken}}">이전페이지</a></li>
+      <li><a href="{% url 'video:search' %}?keyword={{ keyword }}">첫 페이지로</a></li>
+      {% endif %}
+      {% if response.nextPageToken %}
+      <li><a href="{% url 'video:search' %}?keyword={{ keyword }}&page_token={{ response.nextPageToken}}">다음페이지</a></li>
+      {% endif %}
+    </ul>
+  </nav>
+</div>
+{% endblock %}

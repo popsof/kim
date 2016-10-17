@@ -82,7 +82,7 @@ def video_list(request, cate_id ):
 	return render( request, 'video/video_list.html', context )
 
 def get_youtube_key( url ):
-	pattern = r'www.youtube.com/watch\?v=([-\w]+)'
+	pattern = r'www\.youtube\.com/watch\?v=([-\w]+)'
 	res = re.search( pattern, url )
 	if res:
 		return res.group(1)
