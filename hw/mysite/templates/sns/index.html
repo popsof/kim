@@ -4,9 +4,10 @@
 <div class="container">
 <h3>SNS Application</h3>
 <div class="btn-group">
-  <button type="button" class="btn btn-danger dropdown-toggle"
-  data-toggle="dropdown" aria-expanded="false">
-    {% if cur_rank %}과거 {{ cur_rank }}{% else %}페북 친구없음{% endif %}<span class="caret"></span>
+  <button type="button"
+    class="btn btn-danger dropdown-toggle {% if not cur_rank %}disabled{% endif %}"
+    data-toggle="dropdown" aria-expanded="false">
+    과거 {% if cur_rank %}{{ cur_rank }}{% else %}페북 친구없음{% endif %}<span class="caret"></span>
   </button>
   <ul class="dropdown-menu" role="menu">
     {% for rank in rank_list %}

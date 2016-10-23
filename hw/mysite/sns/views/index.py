@@ -22,6 +22,9 @@ def index(request, rank_id):
     rank_list = get_rank_list(rank, 2)
     if rank_list and not rank:
         rank = rank_list[-1]
+        
+    if not rank:
+        return render(request, 'sns/index.html', {})
     
     if rank_list.index(rank) > 1:
         prev_rank = rank_list[rank_list.index(rank)-1]
