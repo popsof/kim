@@ -1,0 +1,56 @@
+{% extends 'common/base.html' %}
+
+{% block content %}
+<div class="container">
+<h3>SNS Application</h3>
+<div class="btn-group">
+  <button type="button" class="btn btn-danger dropdown-toggle"
+  data-toggle="dropdown" aria-expanded="false">
+    {% if cur_rank %}과거 {{ cur_rank }}{% else %}페북 친구없음{% endif %}<span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" role="menu">
+    {% for rank in rank_list %}
+    <li><a href="{% url 'sns:index' rank.id %}">
+      {{ rank }}
+      {%if rank == cur_rank %}
+      <span class="glyphicon glyphicon-heart"></span>{% endif %}
+    </a></li>
+    {% endfor %}
+  </ul>
+</div>
+  <a href="https://www.facebook.com/v2.8/dialog/oauth?client_id={{ facebook_app_id }}&redirect_uri=http://{{ request.META.HTTP_HOST }}{% url 'sns:friends_ranking' %}&response_type=code&scope=user_friends,public_profile,email,user_posts"
+    class="btn btn-warning">다시 페이스북 친구확인
+    <span class="badge">없을 수도 있다OTL</span>
+  </a>
+<p></p>
+<div>
+{% if not friend_list %}
+<div class="alert alert-info" role="alert">
+친구가 하나도 없습니다.
+</div>
+{% else %}
+<table class="table">
+  <tr><th>#</th> <th></th> <th>친구 이름</th> <th>친구 점수</th> <th>순위 변화</th></tr>
+  {% for friend in friend_list %}
+  <tr>
+    <th>{{ forloop.counter }}</th>
+    <td><img src="https://graph.facebook.com/v2.8/{{ friend.face_id }}/picture?access_token={{ access_token }}&type=large"></td>
+    <td>{{ friend.face_name }}</td>
+    <td>{{ friend.score }}</td>
+    <td>
+      {% if not friend.updown %}-
+      {% elif friend.updown == 0 %}-
+      {% elif friend.updown == 1000 %}New
+      {% elif friend.updown > 0 %}{{ friend.updown }}<span class="glyphicon glyphicon-thumbs-up"></span>
+      {% else %}{{ friend.updown }}<span class="glyphicon glyphicon-thumbs-down"></span>
+      {% endif %}
+    </td>
+
+  </tr>
+  {% endfor %}
+</table>
+{% endif %}
+</div>
+
+</div>
+{% endblock %}

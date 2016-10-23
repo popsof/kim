@@ -1,0 +1,38 @@
+{% extends 'common/base.html' %}
+
+{% block content %}
+<div class="container">
+{% if friend_list %}
+<div class="form">
+<form action="{% url 'sns:save_friends' %}" method="POST">
+  {% csrf_token %}
+  <input type="hidden" name="friend_count" value="{{ friend_list|length }}">
+  {% for friend in friend_list %}
+    {% with cur_index=forloop.counter0|stringformat:"02d" %}
+    <input type="hidden" name="id_{{ cur_index }}" value="{{ friend.0 }}">
+    <input type="hidden" name="name_{{ cur_index }}" value="{{ friend.1 }}">
+    <input type="hidden" name="score_{{ cur_index }}" value="{{ friend.2 }}">
+    {% endwith %}
+  {% endfor %}
+  <button type="submit" class="btn btn-warning">Best Friends 저장</button>
+</form>
+</div>
+
+{% for friend in friend_list %}
+<div class="media">
+  <div class="media-left">
+    <img src="https://graph.facebook.com/v2.8/{{ friend.0 }}/picture?access_token={{ access_token }}&type=large">
+  </div>
+  <div class="media-body">
+    <h5 class="media-heading">
+      {{ friend.1 }}
+    </h5>
+    <p>{{ friend.2 }}</p>
+  </div>
+</div>
+{% endfor %}
+{% else %}
+<h3>친구가 없습니다. OTL ㅠㅠ</h3>
+{% endif %}
+</div>
+{% endblock %}
